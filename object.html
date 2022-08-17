@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <h1>Object</h1>
+  <h2>Create</h2>
+  <script>
+    var ark = {
+      "player": "sunghyun",
+      "designer": "hr"
+    };
+    document.write("player:"+ ark.player+"<br>");
+    document.write("designer:"+ ark.designer+"<br>");
+    ark.player2="hyun2"
+    document.write("player2:"+ ark.player2+"<br>");
+    ark["data scientist"]="hr2";
+    document.write("data scientist:"+ ark["data scientist"]+"<br>");
+  </script>
+  <h2>Iterate</h2>
+  <script>
+    for(var key in ark){
+      document.write(key+':'+ark[key]+'<br>');
+    }
+  </script>
+  <h2>Property & Method</h2>
+  <script>
+    ark.showall=function(){
+      for(var key in this){
+        document.write(key+':'+this[key]+'<br>');
+      }
+    }
+    ark.showall();
+  </script>
+</body>
+
+</html>
