@@ -5,37 +5,44 @@
   <meta charset="utf-8">
   <title></title>
 </head>
+<script>
+  function LinksSetColor(color) {
+    var alist = document.querySelectorAll('a');
+    var i = 0;
+    while (i < alist.length) {
+      console.log(alist[i]);
+      alist[i].style.color = color;
+      i = i + 1;
+
+    }
+  }
+  function bodySetColor(color) {
+    document.querySelector('body').style.color = color;
+  }
+  function bodySetBackgroundColor(color) {
+    document.querySelector('body').style.backgroundColor = color;
+  }
+  function nightdayhandler(self) {
+    var target = document.querySelector('body')
+    if (self.value === 'night') {
+      bodySetBackgroundColor('black')
+      bodySetColor('white');
+      self.value = 'day';
+
+      LinksSetColor('powderblue');
+    } else {
+      bodySetBackgroundColor('white')
+      bodySetColor('black');
+      self.value = 'night';
+
+      LinksSetColor('red');
+    }
+  }
+</script>
 
 <body>
   <h1><a href="index.html">CPU</a></h1>
-  <input type="button" value="night" onclick="
-  var target = document.querySelector('body')
-  if(this.value==='night'){
-    target.style.backgroundColor='black';
-    target.style.color='white';
-    this.value = 'day';
-
-    var alist =document.querySelectorAll('a');
-    var i=0;
-    while(i< alist.length){
-        console.log(alist[i]);
-        alist[i].style.color='powderblue';
-        i=i+1;
-    }
-  } else {
-    target.style.backgroundColor='white';
-    target.style.color='black';
-    this.value = 'night';
-
-    var alist =document.querySelectorAll('a');
-    var i=0;
-    while(i< alist.length){
-        console.log(alist[i]);
-        alist[i].style.color='red';
-        i=i+1;
-    }
-  }
-  ">
+  <input type="button" value="night" onclick="nightdayhandler(this);">
   <OL>
     <li><a href="js1.html">CPU</a></li>
     <li><a href="js2.html">RYZEN</a></li>
