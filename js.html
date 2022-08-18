@@ -5,51 +5,14 @@
   <meta charset="utf-8">
   <title></title>
 </head>
-<script>
-  var Links={
-    setColor:function (color) {
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while (i < alist.length) {
-        console.log(alist[i]);
-        alist[i].style.color = color;
-        i = i + 1;
-
-    }
-  }
-}
-
-  var Body={
-    setColor:function (color){
-      document.querySelector('body').style.color = color;
-    },
-    setBackgroundColor:function (color){
-      document.querySelector('body').style.backgroundColor = color;
-    }
-  }
-  function nightdayhandler(self) {
-    var target = document.querySelector('body')
-    if (self.value === 'night') {
-      Body.setBackgroundColor('black')
-      Body.setColor('white');
-      self.value = 'day';
-
-      Links.setColor('powderblue');
-    } else {
-      Body.setBackgroundColor('white')
-      Body.setColor('black');
-      self.value = 'night';
-
-      Links.setColor('red');
-    }
-  }
+<script src="color.js">
 </script>
 
 <body>
-  <h1><a href="index.html">CPU</a></h1>
+  <h1><a href="index.html">AMD CPU</a></h1>
   <input type="button" value="night" onclick="nightdayhandler(this);">
   <OL>
-    <li><a href="js1.html">CPU</a></li>
+    <li><a href="js.html">CPU</a></li>
     <li><a href="js2.html">RYZEN</a></li>
     <li><a href="js3.html">5SERIES</a></li>
   </OL>
